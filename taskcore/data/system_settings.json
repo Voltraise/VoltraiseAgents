@@ -1,0 +1,66 @@
+export interface LoggingConfig {
+  level: "debug" | "info" | "warn" | "error"
+  destinations: string[]
+  filePath?: string
+  rotationPolicy?: "daily" | "weekly" | "size"
+}
+
+export interface FeatureToggles {
+  enableDiagnostics: boolean
+  enableRealTimeAlerts: boolean
+  enableMetrics?: boolean
+  enableApiTracing?: boolean
+}
+
+export interface ProjectConfig {
+  projectName: string
+  environment: "development" | "staging" | "production"
+  logging: LoggingConfig
+  features: FeatureToggles
+  createdAt?: string
+  updatedAt?: string
+}
+
+export const defaultConfig: ProjectConfig = {
+  projectName: "CoreLab",
+  environment: "development",
+  logging: {
+    level: "debug",
+    destinations: ["console", "file"],
+    filePath: "./logs/corelab.log",
+    rotationPolicy: "daily",
+  },
+  features: {
+    enableDiagnostics: true,
+    enableRealTimeAlerts: false,
+    enableMetrics: true,
+    enableApiTracing: false,
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+}
+
+export const updateConfig = (
+  config: ProjectConfig,
+  updates: Partial<ProjectConfig>
+): ProjectConfig => {
+  return {
+    ...config,
+    ...updates,
+    logging: { ...config.logging, ...updates.logging },
+    features: { ...config.features, ...updates.features },
+    updatedAt: new Date().toISOString(),
+  }
+}
+
+export const validateConfig = (config: ProjectConfig): string[] => {
+  const errors: string[] = []
+  if (!config.projectName) errors.push("Project name is required.")
+  if (!["development", "staging", "production"].includes(config.environment)) {
+    errors.push(`Invalid environment: ${config.environment}`)
+  }
+  if (!config.logging.destinations.length) {
+    errors.push("At least one logging destination must be specified.")
+  }
+  return errors
+}
