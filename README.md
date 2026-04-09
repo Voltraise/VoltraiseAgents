@@ -1,492 +1,218 @@
-# picoLLM Inference Engine
+<p align="center">
+<img width="400" height="400" src="https://github.com/user-attachments/assets/02314c23-648e-4532-a004-79c0b6cb2e83" />
+</p>
 
-[![GitHub release](https://img.shields.io/github/release/Picovoice/picollm.svg)](https://github.com/Picovoice/picollm/releases)
-[![GitHub](https://img.shields.io/github/license/Picovoice/picollm)](https://github.com/Picovoice/picollm/)
+<h1 align="center">Voltraise</h1>
 
-[![Maven Central](https://img.shields.io/maven-central/v/ai.picovoice/picollm-android?label=maven-central%20%5Bandroid%5D)](https://repo1.maven.org/maven2/ai/picovoice/picollm-android/)
-[![npm](https://img.shields.io/npm/v/@picovoice/picollm-web?label=npm%20%5Bweb%5D)](https://www.npmjs.com/package/@picovoice/picollm-web)<!-- markdown-link-check-disable-line -->
-[![CocoaPods](https://img.shields.io/cocoapods/v/picoLLM-iOS)](https://cocoapods.org/pods/picoLLM-iOS)<!-- markdown-link-check-disable-line -->
-[![PyPI](https://img.shields.io/pypi/v/picollm)](https://pypi.org/project/picollm/)
-[![Nuget](https://img.shields.io/nuget/v/picollm)](https://www.nuget.org/packages/PicoLLM/)
+<div align="center">
+  <p><strong>AI-native on-chain intelligence terminal for Solana</strong></p>
+  <p>
+    Token quality • Wallet behavior • Risk overlays • Real-time signals • Execution context
+  </p>
+</div>
 
-Made in Vancouver, Canada by [Picovoice](https://picovoice.ai)
+---
 
-[![Twitter URL](https://img.shields.io/twitter/url?label=%40AiPicovoice&style=social&url=https%3A%2F%2Ftwitter.com%2FAiPicovoice)](https://twitter.com/AiPicovoice)<!-- markdown-link-check-disable-line -->
-[![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCAdi9sTCXLosG1XeqDwLx7w?label=YouTube&style=social)](https://www.youtube.com/channel/UCAdi9sTCXLosG1XeqDwLx7w)
+### 🚀 Quick Links
 
-picoLLM Inference Engine is a highly accurate and cross-platform SDK optimized for running compressed large language
-models. picoLLM Inference Engine is:
+[![Web App](https://img.shields.io/badge/Web%20App-Open-3b82f6?style=for-the-badge&logo=googlechrome&logoColor=white)](#)
 
-- Accurate; picoLLM Compression improves GPTQ by [significant margins](https://picovoice.ai/blog/picollm-towards-optimal-llm-quantization/)
-- Private; LLM inference runs 100% locally.
-- Cross-Platform
-    - Linux (x86_64), macOS (arm64, x86_64), and Windows (x86_64, arm64)
-    - Raspberry Pi (5 and 4)
-    - Android and iOS
-    - Chrome, Safari, Edge, and Firefox
-- Runs on CPU and GPU
-- Free for open-weight models
+[![Telegram Mini App](https://img.shields.io/badge/Telegram%20Mini%20App-Launch-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](#)
 
-## Table of Contents
+[![Docs](https://img.shields.io/badge/Docs-Read-8b5cf6?style=for-the-badge&logo=readthedocs&logoColor=white)](#)
 
-- [picoLLM](#picollm-inference-engine)
-    - [Table of Contents](#table-of-contents)
-    - [Showcases](#showcases)
-      - [Raspberry Pi](#raspberry-pi)
-      - [Android](#android)
-      - [iOS](#ios)
-      - [Cross-Browser Local LLM](#cross-browser-local-llm)
-      - [Llama-3-70B-Instruct on GeForce RTX 4090](#llama-3-70b-instruct-on-geforce-rtx-4090)
-      - [Local LLM-Powered Voice Assistant on Raspberry Pi](#local-llm-powered-voice-assistant-on-raspberry-pi)
-      - [Local Llama-3-8B-Instruct Voice Assistant on CPU](#local-llama-3-8b-instruct-voice-assistant-on-cpu)
-    - [Accuracy](#accuracy)
-    - [Models](#models)
-    - [AccessKey](#accesskey)
-    - [Demos](#demos)
-        - [Python](#python-demos)
-        - [.NET](#net-demos)
-        - [Node.js](#nodejs-demos)
-        - [Android](#android-demos)
-        - [iOS](#ios-demos)
-        - [Web](#web-demos)
-        - [C](#c-demos)
-    - [SDKs](#sdks)
-        - [Python](#python-sdk)
-        - [.NET](#net-sdk)
-        - [Node.js](#nodejs-sdk)
-        - [Android](#android-sdk)
-        - [iOS](#ios-sdk)
-        - [Web](#web-sdk)
-        - [C](#c-sdk)
-    - [Releases](#releases)
+[![X.com](https://img.shields.io/badge/X.com-Follow-000000?style=for-the-badge&logo=x&logoColor=white)](#)
 
-## Showcases
+---
 
-### Raspberry Pi
+> [!IMPORTANT]
+> Voltraise is a non-custodial analytics and trading intelligence platform. You always control your assets
 
-[![Local LLM on Raspberry Pi](https://img.youtube.com/vi/CeKPXZ_8hkI/0.jpg)](https://www.youtube.com/watch?v=CeKPXZ_8hkI)
+> [!WARNING]
+> On-chain markets are volatile. Signals and analytics do not eliminate risk
 
-### Android
+> [!TIP]
+> Use agents and risk overlays as a second layer of decision support, not as blind execution
 
-[![How to Run a Local LLM on Android](https://img.youtube.com/vi/XeUMkue-5lI/0.jpg)](https://www.youtube.com/watch?v=XeUMkue-5lI)
+> [!NOTE]
+> The platform is evolving. New analytics layers, agents, and integrations are continuously added
 
-### iOS
+---
 
-[![How to Run a Local LLM on iOS](https://img.youtube.com/vi/dNK5esdkI0Y/0.jpg)](https://www.youtube.com/watch?v=dNK5esdkI0Y)
+## What’s Actually Broken
 
-### Cross-Browser Local LLM
+Most tools show movement, not structure
 
-[Live Demo — Works offline!](https://picovoice.ai/picollm/)
+They show candles, volume spikes, and trending tokens  
+but fail to answer:
 
-### Llama-3-70B-Instruct on GeForce RTX 4090
+- is liquidity real or fragile  
+- who is actually holding and moving the token  
+- whether this is sustainable flow or short-term noise  
+- how this position fits into total exposure  
 
-[![Llama-3-70B-Instruct on GeForce RTX 4090](https://img.youtube.com/vi/4mcVwbOOIqk/0.jpg)](https://www.youtube.com/watch?v=4mcVwbOOIqk)
+> [!CAUTION]
+> Entering positions without structure often leads to hidden concentration and uncontrolled risk
 
-### Local LLM-Powered Voice Assistant on Raspberry Pi
+---
 
-[![Local LLM-Powered Voice Assistant on Raspberry Pi](https://img.youtube.com/vi/GEndT3RGRvw/0.jpg)](https://www.youtube.com/watch?v=GEndT3RGRvw)
+## The Shift (New Mental Model)
 
-### Local Llama-3-8B-Instruct Voice Assistant on CPU
+Voltraise treats the market as a **system of signals, flows, and risk states**, not isolated charts
 
-[![Local Llama-3-8B-Instruct Voice Assistant on CPU](https://img.youtube.com/vi/uV0GlXDFSPw/0.jpg)](https://www.youtube.com/watch?v=uV0GlXDFSPw)
+Instead of:
 
-## Accuracy
+| Old Approach | Voltraise Approach |
+|-------------|------------------|
+| Price-first | Structure-first |
+| Reactive trading | Context-driven decisions |
+| Fragmented tools | One unified system |
+| Indicators | Explainable signals |
 
-picoLLM Compression is a novel large language model (LLM) quantization algorithm developed within Picovoice. Given a task-specific cost function, picoLLM Compression automatically learns the optimal bit allocation strategy across and within LLM's weights. Existing techniques require a fixed bit allocation scheme, which is subpar.
+You don’t just see movement  
+you understand **why it exists and what it implies**
 
-For example, picoLLM Compression recovers MMLU score degradation of widely adopted GPTQ by 91%, 99%, and 100% at 2, 3,
-and 4-bit settings. The figure below depicts the MMLU comparison between picoLLM and GPTQ for Llama-3-8b [[1]](https://picovoice.ai/blog/picollm-towards-optimal-llm-quantization/).
+---
 
-![picoLLM Compression vs GPTQ MMLU scores when applied to Llama-3-8B](./resources/mmlu-llama-3-8b.svg)
+## Product View
 
-## Models
+```mermaid
+flowchart TD
 
-picoLLM Inference Engine supports the following open-weight models. The models are on
-[Picovoice Console](https://console.picovoice.ai/).
+    A[Web Terminal] --> CORE
+    B[Telegram App] --> CORE
+    C[Extension] --> CORE
+    D[API Layer] --> CORE
 
-- Gemma
-    - `gemma-2b`
-    - `gemma-2b-it`
-    - `gemma-7b`
-    - `gemma-7b-it`
-- Llama-2
-    - `llama-2-7b`
-    - `llama-2-7b-chat`
-    - `llama-2-13b`
-    - `llama-2-13b-chat`
-    - `llama-2-70b`
-    - `llama-2-70b-chat`
-- Llama-3
-    - `llama-3-8b`
-    - `llama-3-8b-instruct`
-    - `llama-3-70b`
-    - `llama-3-70b-instruct`
-- Llama-3.2
-    - `llama3.2-1b-instruct`
-    - `llama3.2-3b-instruct`
-- Mistral
-    - `mistral-7b-v0.1`
-    - `mistral-7b-instruct-v0.1`
-    - `mistral-7b-instruct-v0.2`
-- Mixtral
-    - `mixtral-8x7b-v0.1`
-    - `mixtral-8x7b-instruct-v0.1`
-- Phi-2
-    - `phi2`
-- Phi-3
-    - `phi3`
-- Phi-3.5
-  - `phi3.5`
+    CORE[Unified Intelligence Engine]
 
-## AccessKey
+    CORE --> E[Token Analysis]
+    CORE --> F[Wallet Tracking]
+    CORE --> G[Risk Engine]
+    CORE --> H[Signal Layer]
 
-AccessKey is your authentication and authorization token for deploying Picovoice SDKs, including picoLLM. Anyone who is using Picovoice needs to have a valid AccessKey. You must keep your AccessKey secret. You would need internet connectivity to validate your AccessKey with Picovoice license servers, even though the LLM inference is running 100% offline.
+    H --> I[Agents]
+    I --> J[Decisions]
 
-AccessKey also verifies that your usage is within the limits of your account. You can see your usage limits and real-time usage on your [Picovoice Console](https://console.picovoice.ai/signup) Profile. To continue using Picovoice after your trial or renew and adjust your usage limits, please reach out to our [Enterprise Sales Team](https://picovoice.ai/contact/) or your existing Picovoice contact.
+    J --> K[Execution Context]
+    J --> L[Alerts]
 
-## Demos
+    CORE --> M[Credits System]
+    CORE --> N[$RAISE Economy]
 
-### Python Demos
-
-Install the demo package:
-
-```console
-pip3 install picollmdemo
+    L --> O[Telegram / Discord / Webhooks]
 ```
 
-Run the following in the terminal:
+---
 
-```console
-picollm_demo_completion --access_key ${ACCESS_KEY} --model_path ${MODEL_PATH} --prompt ${PROMPT}
+## Proof (Hard Signal)
+
+**Before**
+
+- switching between 5–7 tools  
+- no unified risk view  
+- reactive entries  
+
+**After**
+
+- single terminal for analysis + execution  
+- structured signals instead of noise  
+- clear exposure and liquidity awareness  
+
+> Real outcome: fewer impulsive trades, more filtered entries, better session consistency
+
+---
+
+## Try the Core Loop (Fast Win)
+
+1. Pick a token  
+2. Open intelligence view  
+3. Check liquidity + holders + wallet flow  
+4. Review signals + agent summary  
+5. Decide or ignore  
+
+That’s the loop  
+Everything else builds on top of it  
+
+---
+
+## Real Scenarios (Not Toy)
+
+### 1. Early Token Validation  
+You see a new token moving  
+→ check liquidity depth, holder distribution, wallet clusters  
+→ avoid entering into unstable structure  
+
+### 2. Momentum With Context  
+Token is trending  
+→ verify if flow is sustained or shallow  
+→ align entry with real demand  
+
+### 3. Portfolio Risk Control  
+Multiple positions open  
+→ detect hidden concentration across similar tokens  
+→ reduce exposure before drawdown  
+
+---
+
+## Mechanics (Under the Hood Lite)
+
+Voltraise processes:
+
+- market data streams  
+- wallet activity  
+- liquidity state  
+- holder distribution  
+
+Then builds:
+
+- signals  
+- risk overlays  
+- agent summaries  
+
+```text
+raw data → normalization → enrichment → signals → agents → decision context
 ```
 
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${MODEL_PATH}` with the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` with a prompt string.
+---
 
-For more information about Python demos go to [demo/python](demo/python/README.md).
+## Why Not X
 
-### .NET Demos
+| Approach | Limitation |
+|---------|-----------|
+| Manual analysis | too slow, fragmented |
+| GPT wrappers | no real data grounding |
+| Basic scanners | surface-level metrics |
+| Voltraise | structured, explainable, real-time system |
 
-From [demo/dotnet/PicoLLMDemo](demo/dotnet/PicoLLMDemo) build and run the demo:
+---
 
-```console
-dotnet build -c CompletionDemo.Release
-dotnet run -c CompletionDemo.Release -- --access_key ${ACCESS_KEY} --model_path ${MODEL_PATH} --prompt ${PROMPT}
-```
+## Failure Cases (Respect Time)
 
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${MODEL_PATH}` with the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` with a prompt string.
+Voltraise is not for:
 
-For more information about .NET demos go to [demo/dotnet](demo/dotnet).
+- fully passive trading  
+- blind automation  
+- guaranteed outcomes  
 
-### Node.js Demos
+It may be overkill if:
 
-Install the demo package:
+- you only track price  
+- you don’t use structured decision-making  
+- you trade purely on instinct  
 
-```console
-yarn global add @picovoice/picollm-node-demo
-```
+---
 
-Run the following in the terminal:
+## Final Position
 
-```console
-picollm-completion-demo --access_key ${ACCESS_KEY} --model_path ${MODEL_PATH} --prompt ${PROMPT}
-```
+Voltraise is not a charting tool  
+It is a **decision system for on-chain trading**
 
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${MODEL_PATH}` with the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` with a prompt string.
+Where:
 
-For more information about Node.js demos go to [Node.js demo](./demo/nodejs).
+- signals explain  
+- agents interpret  
+- you decide  
 
-### Android Demos
+---
 
-Using Android Studio, open the [Completion demo](demo/android/Completion) as an Android project, copy your AccessKey into MainActivity.java, and run the application.
-
-To learn about how to use picoLLM in a chat application, try out the [Chat demo](demo/android/Chat).
-
-For more information about Android demos go to [demo/android](demo/android/README.md).
-
-### iOS Demos
-
-To run the completion demo, go to [demo/ios/Completion](demo/ios/Completion) and run:
-
-```console
-pod install
-```
-
-Replace `let ACCESS_KEY = "${YOUR_ACCESS_KEY_HERE}"` in the file [VieModel.swift](demo/ios/Completion/PicoLLMCompletionDemo/ViewModel.swift) with your AccessKey obtained from [Picovoice Console](https://console.picovoice.ai/).
-
-Then, using [Xcode](https://developer.apple.com/xcode/), open the generated `PicoLLMCompletionDemo.xcworkspace` and run the application.
-
-To learn about how to use picoLLM in a chat application, try out the [Chat demo](demo/ios/Chat).
-
-For more information about iOS demos go to [demo/ios](demo/ios/README.md).
-
-### Web Demos
-
-From [demo/web](demo/web) run the following in the terminal:
-
-```console
-yarn
-yarn start
-```
-
-(or)
-
-```console
-npm install
-npm run start
-```
-
-Open `http://localhost:5000` in your browser to try the demo.
-
-### C Demos
-
-Build the demo:
-
-```console
-cmake -S demo/c/ -B demo/c/build && cmake --build demo/c/build
-```
-
-Run the demo:
-
-```console
-./demo/c/build/picollm_demo_completion -a ${ACCESS_KEY} -l ${LIBRARY_PATH} -m ${MODEL_FILE_PATH} -p ${PROMPT}
-```
-
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${LIBRARY_PATH}` with the path to the shared
-library file located in the [lib](lib) directory, `${MODEL_FILE_PATH}` with the path to a model file downloaded from
-Picovoice Console, and `${PROMPT}` with a prompt string.
-
-For more information about C demos go to [demo/c](demo/c/README.md).
-
-## SDKs
-
-### Python SDK
-
-Install the Python SDK:
-
-```console
-pip3 install picollm
-```
-
-Create an instance of the engine and generate a prompt completion:
-
-```python
-import picollm
-
-pllm = picollm.create(
-    access_key='${ACCESS_KEY}',
-    model_path='${MODEL_PATH}')
-
-res = pllm.generate('${PROMPT}')
-print(res.completion)
-```
-
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${MODEL_PATH}` to the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` to a prompt string. Finally, when done be sure to explicitly release
-the resources using `pllm.release()`.
-
-### .NET SDK
-
-Install the .NET SDK using NuGet or the dotnet CLI:
-
-```console
-dotnet add package PicoLLM
-```
-
-Create an instance of the engine and generate a prompt completion:
-
-```csharp
-using Pv;
-
-PicoLLM pllm = PicoLLM.Create("${ACCESS_KEY}", "${MODEL_PATH}");
-
-PicoLLMCompletion res = pllm.Generate('${PROMPT}');
-Console.WriteLine(res.Completion);
-```
-
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${MODEL_PATH}` to the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` to a prompt string.
-
-`PicoLLM` will have its resources freed by the garbage collector, but to have resources freed immediately after use,
-wrap it in a using statement or call `.Dispose()` directly:
-
-```csharp
-using(PicoLLM pllm = PicoLLM.Create(accessKey, modelPath))
-{
-    // .. picoLLM usage here
-}
-```
-
-### Node.js SDK
-
-Install the Node.js SDK:
-
-```console
-yarn add @picovoice/picollm-node
-```
-
-Create instances of the picoLLM class:
-
-```javascript
-const { PicoLLM } = require("@picovoice/picollm-node");
-const pllm = new PicoLLM('${ACCESS_KEY}', '${MODEL_PATH}');
-
-const res = await pllm.generate('${PROMPT}');
-console.log(res.completion);
-```
-
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${MODEL_PATH}` to the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` to a prompt string. Finally, when done be sure to explicitly release
-the resources using `pllm.release()`.
-
-### Android SDK
-
-Create an instance of the inference engine and generate a prompt completion:
-
-```java
-import ai.picovoice.picollm.*;
-
-try {
-    PicoLLM picollm = new PicoLLM.Builder()
-        .setAccessKey("${ACCESS_KEY}")
-        .setModelPath("${MODEL_PATH}")
-        .build();
-    PicoLLMCompletion res = picollm.generate(
-        "${PROMPT}",
-        new PicoLLMGenerateParams.Builder().build());
-} catch (PicoLLMException e) { }
-```
-
-Replace `${ACCESS_KEY}` with your `AccessKey` from Picovoice Console, `${MODEL_PATH}` to the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` to a prompt string. Finally, when done be sure to explicitly release
-the resources using `picollm.delete()`.
-
-### iOS SDK
-
-Create an instance of the engine and generate a prompt completion:
-
-```swift
-import PicoLLM
-
-let pllm = try PicoLLM(
-    accessKey: "${ACCESS_KEY}",
-    modelPath: "${MODEL_PATH}")
-
-let res = pllm.generate(prompt: "${PROMPT}")
-print(res.completion)
-```
-
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${MODEL_PATH}` to the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` to a prompt string.
-
-### Web SDK
-
-Install the web SDK using yarn:
-
-```console
-yarn add @picovoice/picollm-web
-```
-
-or using npm:
-
-```console
-npm install --save @picovoice/picollm-web
-```
-
-Create an instance of the engine using `PicoLLMWorker` and transcribe an audio file:
-
-```typescript
-import { PicoLLMWorker } from "@picovoice/picollm-web";
-
-const picoLLMModel = {
-  modelFile: '${MODEL_FILE}'
-}
-
-const picoLLM = await PicoLLMWorker.create(
-  "${ACCESS_KEY}",
-  picoLLMModel
-);
-
-const res = await picoLLM.generate(`${PROMPT}`);
-console.log(res.completion);
-```
-
-Replace `${ACCESS_KEY}` with yours obtained from [Picovoice Console](https://console.picovoice.ai/), `${MODEL_FILE}` with the contents of the model file as `File`, `Blob` or `URL (path to model file)` format and `${PROMPT}` with a prompt string. Finally, when done release the resources using `picoLLM.release()`.
-
-### C SDK
-
-Create an instance of the engine and generate a prompt completion:
-
-```c
-pv_picollm_t *pllm = NULL;
-pv_picollm_init(
-    "${ACCESS_KEY}",
-    "${MODEL_PATH}",
-    "best",
-    &pllm);
-
-pv_picollm_usage_t usage;
-pv_picollm_endpoint_t endpoint;
-int32_t num_completion_tokens;
-pv_picollm_completion_token_t *completion_tokens;
-char *output;
-pv_picollm_generate(
-    pllm,
-    "${PROMPT}",
-    -1,    // completion_token_limit
-    NULL,  // stop_phrases
-    0,     // num_stop_phrases
-    -1,    // seed
-    0.f,   // presence_penalty
-    0.f,   // frequency_penalty
-    0.f,   // temperature
-    1.f,   // top_p
-    0,     // num_top_choices
-    NULL,  // stream_callback
-    NULL,  // stream_callback_context
-    &usage,
-    &endpoint,
-    &completion_tokens,
-    &num_completion_tokens,
-    &output);
-printf("%s\n", output);
-```
-
-Replace `${ACCESS_KEY}` with yours obtained from Picovoice Console, `${MODEL_PATH}` to the path to a model file
-downloaded from Picovoice Console, and `${PROMPT}` to a prompt string.
-
-Finally, when done, be sure to release the resources explicitly:
-
-```c
-pv_picollm_delete(pllm);
-```
-
-## Releases
-
-### v2.0.0 - December 18, 2025
-
-- Improved engine performance
-- Improved support for running on GPU or multiple CPU cores
-
-### v1.3.0 - March 14th, 2025
-
-- Performance improvements
-- Significant performance improvements for iOS and Web
-
-### v1.2.0 - November 26th, 2024
-
-- Performance improvements
-- Added support for phi3.5
-
-### v1.1.0 - October 1st, 2024
-
-- Added `interrupt()` function for halting completion generation early
-- Performance improvements
-- Added support for phi3
-- Bug fixes
-
-### v1.0.0 - May 28th, 2024
-
-- Initial release
